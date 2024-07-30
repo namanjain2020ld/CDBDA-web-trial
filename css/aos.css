@@ -1,0 +1,26 @@
+:root {
+    --transition-duration: 0.05s; /* Default duration */
+    --transition-delay: 0s;      /* Default delay */
+  }
+  
+  /* Duration and delay mappings */
+  [data-aos-duration] {
+    --transition-duration: calc(var(--aos-duration, 1000ms));
+  }
+  
+  [data-aos-delay] {
+    --transition-delay: calc(var(--aos-delay, 0ms));
+  }
+  
+  /* Apply transitions */
+  [data-aos] {
+    transition-duration: var(--transition-duration);
+    transition-delay: var(--transition-delay);
+  }
+  
+  /* Optional: ensure smoothness */
+  [data-aos].aos-animate {
+    transition: opacity var(--transition-duration) ease-in-out,
+                transform var(--transition-duration) ease-in-out;
+  }
+  
